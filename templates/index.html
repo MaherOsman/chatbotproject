@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Course Recommendation System</title>
+  </head>
+  <body>
+    <h1>Course Recommendation System</h1>
+    <form method="POST">
+      <label for="student_id">Student ID:</label>
+      <input type="text" id="student_id" name="student_id"><br>
+
+      <label for="major">Major:</label>
+      <input type="text" id="major" name="major"><br>
+
+      <label for="num_semesters">Number of Semesters:</label>
+      <select id="num_semesters" name="num_semesters">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select><br>
+
+      {% for i in range(num_semesters) %}
+        <h2>Semester {{ i + 1 }}</h2>
+        <label for="semester_{{ i + 1 }}">Semester:</label>
+        <select id="semester_{{ i + 1 }}" name="semester_{{ i + 1 }}">
+          <option value="Fall">Fall</option>
+          <option value="Spring">Spring</option>
+          <option value="Summer">Summer</option>
+        </select><br>
+
+        <label for="course_{{ i + 1 }}_1">Course 1:</label>
+        <input type="text" id="course_{{ i + 1 }}_1" name="course_{{ i + 1 }}_1"><br>
+
+        <label for="course_{{ i + 1 }}_2">Course 2:</label>
+        <input type="text" id="course_{{ i + 1 }}_2" name="course_{{ i + 1 }}_2"><br>
+
+        <label for="course_{{ i + 1 }}_3">Course 3:</label>
+        <input type="text" id="course_{{ i + 1 }}_3" name="course_{{ i + 1 }}_3"><br>
+
+        <label for="course_{{ i + 1 }}_4">Course 4:</label>
+        <input type="text" id="course_{{ i + 1 }}_4" name="course_{{ i + 1 }}_4"><br>
+      {% endfor %}
+
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>

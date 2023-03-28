@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Course Recommendation</title>
+  </head>
+  <body>
+    <h1>Course Recommendation</h1>
+    <p>Based on your input, we recommend that you take the following courses:</p>
+    <ul>
+      {% for semester in range(num_semesters) %}
+        <h2>Semester {{ semester + 1 }}</h2>
+        {% for course in recommendation[semester] %}
+          <li>{{ course }}</li>
+        {% endfor %}
+      {% endfor %}
+    </ul>
+    {% if required_courses %}
+      <p>You still need to complete the following required courses:</p>
+      <ul>
+        {% for course in required_courses %}
+          <li>{{ course }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </body>
+</html>
+
+
